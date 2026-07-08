@@ -13,7 +13,7 @@ A sleek, responsive, and visually engaging user authentication interface built f
 ## 🛠️ Tech Stack
 
 * **HTML5:** Structured using clean, semantic elements.
-* **CSS3:** Built with Flexbox/Grid layouts, custom variables, and smooth transition animations
+* **CSS3:** Built with Flexbox/Grid layouts, custom variables, and smooth transition animations.
 
 ## 📂 Project Structure
 
