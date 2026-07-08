@@ -1,0 +1,21 @@
+Since this is a frontend-only project for now, your `.gitignore` can stay lightweight. It ensures that system clutter or sensitive configuration settings don't accidentally get pushed to your clean canvas.
+
+```text
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Text Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Local Server / Environment logs
+*.log
+.env
+.env.local
