@@ -1,0 +1,287 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #f4f7ff;
+    --card-bg: #ffffff;
+    --text-primary: #1a1c23;
+    --text-secondary: #717584;
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --border-color: #e2e8f0;
+    --input-bg: #f8fafc;
+    --shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Container Structure */
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.form-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Blobs */
+.form-blob {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.blob-image {
+    position: absolute;
+    rotate: 205deg;
+    opacity: 0.6;
+    filter: blur(40px);
+}
+
+.blob-image-1 {
+    top: -60px;
+    left: -60px;
+    width: 200px;
+    fill: #818cf8;
+}
+
+.blob-image-2 {
+    bottom: -80px;
+    right: -60px;
+    width: 220px;
+    fill: #c084fc;
+}
+
+.blob-image-3 {
+    top: 40%;
+    right: -80px;
+    width: 150px;
+    fill: #f472b6;
+}
+
+/* Form Header */
+.form-header {
+    margin-bottom: 32px;
+}
+
+.form-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.form-header h1 {
+    color: var(--text-primary);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Form Fields & Floating Labels */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--input-bg);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: var(--primary-color);
+    background: var(--card-bg);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Floating Label Logic */
+.floating-label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus ~ .floating-label,
+.input-field:not(:placeholder-shown) ~ .floating-label {
+    top: 0;
+    font-size: 12px;
+    padding: 0 6px;
+    background: var(--card-bg);
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(0.9);
+}
+
+/* Password Eye Icon Wrapper */
+.eye-icon svg{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+/* Checkbox & Options Section */
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.checkbox-field {
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.form-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.form-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--primary-hover);
+}
+
+/* Social Separator */
+.social-login-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.social-login-separator::before,
+.social-login-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.social-login-separator::before {
+    margin-right: 15px;
+}
+
+.social-login-separator::after {
+    margin-left: 15px;
+}
+
+/* Social Buttons */
+.social-login-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background: var(--input-bg);
+    border-color: #cbd5e1;
+}
+
+.social-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Form Footer */
+.form-footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 16px;
+}
+
+.sign-up-link {
+    font-weight: 600;
+}
