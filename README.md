@@ -8,7 +8,7 @@ A sleek, responsive, and visually engaging user authentication interface built f
 * **Interactive Form Elements:** Includes a custom styled password visibility toggle icon and "Remember Me" checkbox.
 * **Social Authentication Layout:** Pre-configured UI buttons for Google, Apple, and Facebook sign-in options.
 * **Fluid Background Aesthetics:** Layered SVG vector blobs that give the form a contemporary, artistic depth.
-* **Fully Responsive:** Optimizes seamlessly across mobile, tablet, and desktop viewports.
+* **Fully Responsive:** Optimizes seamlessly across mobile, tablet, and desktop viewports
 
 ## 🛠️ Tech Stack
 
