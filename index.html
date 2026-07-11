@@ -1,4 +1,3 @@
-<!-- Note: This is a static frontend UI design portfolio project. No data is collected. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,30 +9,30 @@
 <body>
     
     <div class="project-notice">
-  <p>
-    <strong>⚠️ Frontend Practice Project — Not a Real Login</strong>
-  </p>
-  <p>
-    This page is a static UI/UX demo built to practice responsive design and CSS. 
-    It is <strong>not connected to any backend, server, or account system</strong>. 
-    The "Sign In" button and Google/Facebook/Apple icons are non-functional visual 
-    elements only — clicking them does nothing, and no email, password, or personal 
-    data is collected, transmitted, or stored anywhere.
-  </p>
-  <p>
-    This project is not affiliated with, endorsed by, or connected to Google, 
-    Meta/Facebook, or Apple. Their logos are used purely as design references 
-    for a UI practice exercise.
-  </p>
-</div>
+      <p>
+        <strong>⚠️ Frontend Practice Project — Not a Real Login</strong>
+      </p>
+      <p>
+        This page is a static UI/UX demo built to practice responsive design and CSS. 
+        It is <strong>not connected to any backend, server, or account system</strong>. 
+        The "Sign In" button and Google/Facebook/Apple icons are non-functional visual 
+        elements only — clicking them does nothing, and no email, password, or personal 
+        data is collected, transmitted, or stored anywhere.
+      </p>
+      <p>
+        This project is not affiliated with, endorsed by, or connected to Google, 
+        Meta/Facebook, or Apple. Their logos are used purely as design references 
+        for a UI practice exercise.
+      </p>
+    </div>
 
     <div class="container">
         <div class="form-container">
             
             <div class="form-blob">
-                <img src="/projects/login/assets/blob.svg" alt="blob" class="blob-image blob-image-1">
-                <img src="/projects/login/assets/blob.svg" alt="blob" class="blob-image blob-image-2">
-                <img src="/projects/login/assets/blob.svg" alt="blob" class="blob-image blob-image-3">
+                <img src="assets/blob.svg" alt="blob" class="blob-image blob-image-1">
+                <img src="assets/blob.svg" alt="blob" class="blob-image blob-image-2">
+                <img src="assets/blob.svg" alt="blob" class="blob-image blob-image-3">
             </div>
 
             <div class="form-header">
@@ -41,7 +40,7 @@
                 <h1>Welcome Back</h1>
             </div>
 
-            <form action="" class="form-box">
+            <form action="" class="form-box" onsubmit="event.preventDefault();">
                 
                 <div class="input-group">
                     <input type="email" id="email" class="input-field" placeholder=" " required>
@@ -74,13 +73,13 @@
 
                 <div class="social-login-buttons">
                     <a href="#" class="social-btn google-btn">
-                        <img src="assets/google icon.png" alt="Google Logo">
+                        <img src="assets/google-icon.svg" alt="Google Logo">
                     </a>
                     <a href="#" class="social-btn facebook-btn">
-                        <img src="assets/facebook icon.png" alt="Facebook Logo">
+                        <img src="assets/facebook-icon.svg" alt="Facebook Logo">
                     </a>
                     <a href="#" class="social-btn apple-btn">
-                        <img src="assets/apple icon.png" alt="Apple Logo">
+                        <img src="assets/apple-icon.svg" alt="Apple Logo">
                     </a>
                 </div>
 
@@ -93,5 +92,38 @@
         </div>
     </div>
 
-    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.querySelector('.eye-icon');
+            
+            if (passwordInput && eyeIcon) {
+                eyeIcon.addEventListener('click', () => {
+                    const isPassword = passwordInput.getAttribute('type') === 'password';
+                    passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+                    
+                    if (isPassword) {
+                        // Switch to eye-off SVG icon
+                        eyeIcon.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off">
+                                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                                <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                                <line x1="2" y1="2" x2="22" y2="22"/>
+                            </svg>
+                        `;
+                    } else {
+                        // Switch to regular eye SVG icon
+                        eyeIcon.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye">
+                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        `;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
 </html>
